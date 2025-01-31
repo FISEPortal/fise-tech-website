@@ -10986,23 +10986,10 @@ body {
   letter-spacing: 0.0625em;
 }
 
-/*#mainNav {*/
-/*  min-height: 3.5rem;*/
-/*  background-color: #fff;*/
-/*}*/
-/* Ensure the navbar is transparent initially */
 #mainNav {
-  background-color: transparent;
-  transition: background-color 0.3s ease-in-out; /* Smooth transition */
-  z-index: 10; /* Ensure it's above the masthead */
+  min-height: 3.5rem;
+  background-color: #fff;
 }
-/* Add a solid background when scrolled */
-#mainNav.navbar-scrolled {
-  background-color: white; /* Or any desired solid color */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for separation */
-}
-
-
 #mainNav .navbar-toggler {
   font-size: 80%;
   padding: 0.75rem;
