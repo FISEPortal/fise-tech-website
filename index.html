@@ -86,7 +86,7 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const nav = document.getElementById('mainNav'); // Select navbar
+        const nav = document.getElementById('mainNav');
         if (!nav) {
             console.error("Navbar element with ID 'mainNav' not found.");
             return;
@@ -94,16 +94,17 @@
 
         // Function to toggle navbar behavior on scroll
         const changeNavOnScroll = () => {
-            if (window.scrollY > 50) {
-                // Scroll down behavior
-                nav.classList.add('navbar-light', 'bg-white'); // Add white background
-                nav.classList.remove('navbar-dark'); // Ensure dark mode is removed
-                console.log('Scrolling down: Added navbar-light, bg-white'); // Debugging log
+            // Check if we're at the top of the page (within first 50 pixels)
+            const isAtTop = window.scrollY <= 50;
+
+            if (isAtTop) {
+                // At the top: transparent dark navbar
+                nav.classList.remove('navbar-light', 'bg-white');
+                nav.classList.add('navbar-dark');
             } else {
-                // At the top of the page
-                nav.classList.remove('navbar-light', 'bg-white'); // Remove white background
-                nav.classList.add('navbar-dark'); // Ensure dark mode
-                console.log('At top: Added navbar-dark, removed navbar-light, bg-white'); // Debugging log
+                // Scrolled down: white background with dark text
+                nav.classList.remove('navbar-dark');
+                nav.classList.add('navbar-light', 'bg-white');
             }
         };
 
